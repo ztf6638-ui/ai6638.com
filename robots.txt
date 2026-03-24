@@ -1,0 +1,46 @@
+# robots.txt for gptchongzhi.net
+# 网站搜索引擎爬虫规则
+
+# 允许所有搜索引擎抓取
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.js$
+Disallow: /*.css$
+
+# 百度爬虫 - 特别优化
+User-agent: Baiduspider
+Allow: /
+Disallow: /admin/
+Crawl-delay: 1
+
+# 谷歌爬虫
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+
+# 360搜索爬虫
+User-agent: 360Spider
+Allow: /
+Crawl-delay: 1
+
+# 搜狗爬虫
+User-agent: Sogou web spider
+Allow: /
+Crawl-delay: 1
+
+# 必应爬虫
+User-agent: bingbot
+Allow: /
+
+# 神马搜索爬虫
+User-agent: YisouSpider
+Allow: /
+
+# 网站地图位置
+Sitemap: https://gptchongzhi.net/sitemap.xml
+
+# 站点主页
+Host: gptchongzhi.net
+
