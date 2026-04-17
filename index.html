@@ -597,6 +597,54 @@
 
     .footer p { margin: 0; }
 
+    .floating-contact {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 40;
+      width: 218px;
+      padding: 16px;
+      border: 1px solid rgba(37, 99, 235, 0.16);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
+      backdrop-filter: blur(16px);
+    }
+
+    .floating-contact__title {
+      margin-bottom: 10px;
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 950;
+    }
+
+    .floating-contact__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 9px 10px;
+      border-radius: 14px;
+      background: #f8fafc;
+      color: #475569;
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .floating-contact__item + .floating-contact__item { margin-top: 8px; }
+
+    .floating-contact__item strong {
+      color: var(--blue);
+      font-size: 14px;
+    }
+
+    .floating-contact__hint {
+      margin-top: 10px;
+      color: #94a3b8;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
     @media (max-width: 1080px) {
       .product-grid,
       .guide-grid {
@@ -630,6 +678,27 @@
       .cta {
         align-items: flex-start;
         flex-direction: column;
+      }
+
+      .floating-contact {
+        right: 12px;
+        bottom: 12px;
+        width: calc(100% - 24px);
+        max-width: 360px;
+        padding: 12px;
+      }
+
+      .floating-contact__title,
+      .floating-contact__hint { display: none; }
+
+      .floating-contact__item {
+        display: inline-flex;
+        width: calc(50% - 5px);
+      }
+
+      .floating-contact__item + .floating-contact__item {
+        margin-top: 0;
+        margin-left: 6px;
       }
     }
 
@@ -897,6 +966,12 @@
       </div>
     </section>
   </main>
+  <aside class="floating-contact" aria-label="客服联系方式">
+    <div class="floating-contact__title">需要帮助？</div>
+    <div class="floating-contact__item"><span>微信</span><strong>aicz6638</strong></div>
+    <div class="floating-contact__item"><span>QQ</span><strong>1175116341</strong></div>
+    <div class="floating-contact__hint">下单前后都可咨询</div>
+  </aside>
   <footer class="wrap footer">
     <nav class="footer-links" aria-label="底部导航">
       <a href="index.html">首页</a>
