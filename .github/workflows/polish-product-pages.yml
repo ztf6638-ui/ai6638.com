@@ -1,0 +1,107 @@
+name: Polish product page buttons
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/polish-product-pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  polish:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply product page polish
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+
+          css = Path('landing-pages.css')
+          text = css.read_text()
+          text = text.replace('.btn-secondary {\n  background: #fff;\n  border: 1px solid var(--line);\n}', '.btn-secondary {\n  color: var(--ink);\n  background: #fff;\n  border: 1px solid var(--line);\n}')
+          old_trust = '''.trust-item {
+  padding: 14px 16px;
+  border: 1px solid rgba(99, 102, 241, 0.14);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #344054;
+  font-size: 14px;
+  font-weight: 800;
+}'''
+          new_trust = '''.trust-item {
+  position: relative;
+  padding: 10px 0 10px 16px;
+  border-left: 3px solid rgba(99, 102, 241, 0.34);
+  background: transparent;
+  color: #344054;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.trust-item::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--teal), var(--indigo));
+  transform: translateY(-50%);
+}'''
+          text = text.replace(old_trust, new_trust)
+          css.write_text(text)
+
+          replacements = {
+              'chatgpt-plus-recharge.html': (
+                  '        <details><summary>这和 OpenAI 官方是什么关系？</summary><p>本站为第三方充值服务说明页，与 OpenAI 官方无隶属关系。</p></details>\n',
+                  '<div class="hero-actions"><a class="btn btn-secondary" href="chatgpt-plus-recharge-guide.html">查看教程</a><a class="btn btn-secondary" href="https://fe.dtyuedan.cn/shop/37DNWTAT" target="_blank" rel="nofollow noopener">进入购买</a></div>',
+                  '<div class="hero-actions"><a class="btn btn-primary" href="https://fe.dtyuedan.cn/shop/37DNWTAT" target="_blank" rel="nofollow noopener">进入商店</a><a class="btn btn-secondary" href="chatgpt-plus-recharge-guide.html">查看教程</a></div>',
+                  '  <footer class="wrap footer">本站为 AI 会员充值服务说明页，与 OpenAI 官方无隶属关系。页面信息仅供购买前参考，具体商品规则以购买入口为准。</footer>\n',
+              ),
+              'claude-pro-recharge.html': (
+                  '        <details><summary>这和 Anthropic 官方是什么关系？</summary><p>本站为第三方充值服务说明页，与 Anthropic 官方无隶属关系。</p></details>\n',
+                  '<div class="hero-actions"><a class="btn btn-secondary" href="claude-pro-recharge-guide.html">查看教程</a><a class="btn btn-secondary" href="https://fe.dtyuedan.cn/shop/37DNWTAT" target="_blank" rel="nofollow noopener">进入购买</a></div>',
+                  '<div class="hero-actions"><a class="btn btn-primary" href="https://fe.dtyuedan.cn/shop/37DNWTAT" target="_blank" rel="nofollow noopener">进入商店</a><a class="btn btn-secondary" href="claude-pro-recharge-guide.html">查看教程</a></div>',
+                  '  <footer class="wrap footer">本站为 AI 会员充值服务说明页，与 Anthropic 官方无隶属关系。页面信息仅供购买前参考，具体商品规则以购买入口为准。</footer>\n',
+              ),
+              'gemini-recharge.html': (
+                  '        <details><summary>这和 Google 官方是什么关系？</summary><p>本站为第三方充值服务说明页，与 Google 官方无隶属关系。</p></details>\n',
+                  '<div class="hero-actions"><a class="btn btn-secondary" href="gemini-recharge-guide.html">查看教程</a><a class="btn btn-secondary" href="https://fe.dtyuedan.cn/shop/37DNWTAT" target="_blank" rel="nofollow noopener">进入购买</a></div>',
+                  '<div class="hero-actions"><a class="btn btn-primary" href="https://fe.dtyuedan.cn/shop/37DNWTAT" target="_blank" rel="nofollow noopener">进入商店</a><a class="btn btn-secondary" href="gemini-recharge-guide.html">查看教程</a></div>',
+                  '  <footer class="wrap footer">本站为 AI 会员充值服务说明页，与 Google 官方无隶属关系。页面信息仅供购买前参考，具体商品规则以购买入口为准。</footer>\n',
+              ),
+              'grok-recharge.html': (
+                  '        <details><summary>这和 xAI / X 官方是什么关系？</summary><p>本站为第三方充值服务说明页，与 xAI / X 官方无隶属关系。</p></details>\n',
+                  '<div class="hero-actions"><a class="btn btn-secondary" href="grok-recharge-guide.html">查看教程</a><a class="btn btn-secondary" href="https://fe.dtyuedan.cn/shop/37DNWTAT" target="_blank" rel="nofollow noopener">进入购买</a></div>',
+                  '<div class="hero-actions"><a class="btn btn-primary" href="https://fe.dtyuedan.cn/shop/37DNWTAT" target="_blank" rel="nofollow noopener">进入商店</a><a class="btn btn-secondary" href="grok-recharge-guide.html">查看教程</a></div>',
+                  '  <footer class="wrap footer">本站为 AI 会员充值服务说明页，与 xAI / X 官方无隶属关系。页面信息仅供购买前参考，具体商品规则以购买入口为准。</footer>\n',
+              ),
+          }
+
+          for filename, (official_note, old_cta, new_cta, footer) in replacements.items():
+              path = Path(filename)
+              text = path.read_text()
+              text = text.replace(official_note, '')
+              text = text.replace(old_cta, new_cta)
+              text = text.replace(footer, '')
+              path.write_text(text)
+          PY
+          rm -f .github/workflows/polish-product-pages.yml
+          git add landing-pages.css chatgpt-plus-recharge.html claude-pro-recharge.html gemini-recharge.html grok-recharge.html .github/workflows/polish-product-pages.yml
+
+      - name: Commit polish
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git diff --cached --quiet && echo 'No changes to commit' && exit 0
+          git commit -m 'Polish product page CTAs [skip ci]'
+          git push
