@@ -754,15 +754,51 @@
     }
 
     @media (max-width: 920px) {
+      .site-header {
+        position: relative;
+      }
+
       .nav {
-        align-items: flex-start;
-        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+      }
+
+      .brand {
+        min-width: 0;
+      }
+
+      .brand-mark {
+        width: 44px;
+        height: 44px;
+        border-radius: 15px;
+      }
+
+      .brand-title {
+        font-size: 20px;
+      }
+
+      .brand-subtitle {
+        font-size: 11px;
       }
 
       .nav-links {
-        width: 100%;
+        flex: 1;
+        min-width: 0;
+        justify-content: flex-end;
+        gap: 2px;
         overflow-x: auto;
-        padding-bottom: 4px;
+        padding-bottom: 0;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links a {
+        padding: 8px 10px;
+        font-size: 14px;
       }
 
       .hero,
@@ -816,7 +852,7 @@
       }
     }
   </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://ai6638.com/#organization","name":"GPT充值","url":"https://ai6638.com/","logo":"https://ai6638.com/images/20251122.jpg"},{"@type":"WebSite","@id":"https://ai6638.com/#website","url":"https://ai6638.com/","name":"GPT充值","publisher":{"@id":"https://ai6638.com/#organization"},"inLanguage":"zh-CN"},{"@type":"WebPage","@id":"https://ai6638.com/#webpage","url":"https://ai6638.com/","name":"AI会员充值服务入口","description":"ChatGPT、Claude、Gemini、Grok 四个主流 AI 会员充值服务统一入口，包含产品页、教程和开通前博客指南。","isPartOf":{"@id":"https://ai6638.com/#website"},"about":{"@id":"https://ai6638.com/#organization"},"inLanguage":"zh-CN"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://ai6638.com/"}]},{"@type":"ItemList","name":"AI会员充值产品","itemListElement":[{"@type":"ListItem","position":1,"name":"ChatGPT 充值","url":"https://ai6638.com/chatgpt-plus-recharge.html"},{"@type":"ListItem","position":2,"name":"Claude 充值","url":"https://ai6638.com/claude-pro-recharge.html"},{"@type":"ListItem","position":3,"name":"Gemini 充值","url":"https://ai6638.com/gemini-recharge.html"},{"@type":"ListItem","position":4,"name":"Grok 充值","url":"https://ai6638.com/grok-recharge.html"}]},{"@type":"ItemList","name":"AI会员开通指南","itemListElement":[{"@type":"ListItem","position":1,"name":"AI 会员充值安全吗","url":"https://ai6638.com/blog-chatgpt-plus-safe.html"},{"@type":"ListItem","position":2,"name":"没有海外信用卡怎么开通 AI 会员","url":"https://ai6638.com/blog-no-overseas-card.html"},{"@type":"ListItem","position":3,"name":"AI 会员怎么选","url":"https://ai6638.com/blog-chatgpt-plus-vs-pro.html"},{"@type":"ListItem","position":4,"name":"AI 会员充值失败怎么办","url":"https://ai6638.com/blog-recharge-failed.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"AI会员充值一般多久完成？","acceptedAnswer":{"@type":"Answer","text":"不同产品和套餐处理时间不同，请以购买入口和订单状态为准。下单前建议先阅读对应教程，确认账号状态和操作流程。"}},{"@type":"Question","name":"购买前需要准备什么？","acceptedAnswer":{"@type":"Answer","text":"建议准备可正常登录的 ChatGPT、Claude、Google 或 X 相关账号，并确认邮箱、地区、验证方式和账号状态没有异常。"}},{"@type":"Question","name":"订单异常怎么办？","acceptedAnswer":{"@type":"Answer","text":"请保留订单号、支付记录、账号状态和错误截图，通过购买入口或客服指定方式提交核验。"}}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://ai6638.com/#organization","name":"AI会员充值","url":"https://ai6638.com/","logo":"https://ai6638.com/images/20251122.jpg"},{"@type":"WebSite","@id":"https://ai6638.com/#website","url":"https://ai6638.com/","name":"AI会员充值","publisher":{"@id":"https://ai6638.com/#organization"},"inLanguage":"zh-CN"},{"@type":"WebPage","@id":"https://ai6638.com/#webpage","url":"https://ai6638.com/","name":"AI会员充值服务入口","description":"ChatGPT、Claude、Gemini、Grok 四个主流 AI 会员充值服务统一入口，包含产品页、教程和开通前博客指南。","isPartOf":{"@id":"https://ai6638.com/#website"},"about":{"@id":"https://ai6638.com/#organization"},"inLanguage":"zh-CN"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://ai6638.com/"}]},{"@type":"ItemList","name":"AI会员充值产品","itemListElement":[{"@type":"ListItem","position":1,"name":"ChatGPT 充值","url":"https://ai6638.com/chatgpt-plus-recharge.html"},{"@type":"ListItem","position":2,"name":"Claude 充值","url":"https://ai6638.com/claude-pro-recharge.html"},{"@type":"ListItem","position":3,"name":"Gemini 充值","url":"https://ai6638.com/gemini-recharge.html"},{"@type":"ListItem","position":4,"name":"Grok 充值","url":"https://ai6638.com/grok-recharge.html"}]},{"@type":"ItemList","name":"AI会员开通指南","itemListElement":[{"@type":"ListItem","position":1,"name":"AI 会员充值安全吗","url":"https://ai6638.com/blog-chatgpt-plus-safe.html"},{"@type":"ListItem","position":2,"name":"没有海外信用卡怎么开通 AI 会员","url":"https://ai6638.com/blog-no-overseas-card.html"},{"@type":"ListItem","position":3,"name":"AI 会员怎么选","url":"https://ai6638.com/blog-chatgpt-plus-vs-pro.html"},{"@type":"ListItem","position":4,"name":"AI 会员充值失败怎么办","url":"https://ai6638.com/blog-recharge-failed.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"AI会员充值一般多久完成？","acceptedAnswer":{"@type":"Answer","text":"不同产品和套餐处理时间不同，请以购买入口和订单状态为准。下单前建议先阅读对应教程，确认账号状态和操作流程。"}},{"@type":"Question","name":"购买前需要准备什么？","acceptedAnswer":{"@type":"Answer","text":"建议准备可正常登录的 ChatGPT、Claude、Google 或 X 相关账号，并确认邮箱、地区、验证方式和账号状态没有异常。"}},{"@type":"Question","name":"订单异常怎么办？","acceptedAnswer":{"@type":"Answer","text":"请保留订单号、支付记录、账号状态和错误截图，通过购买入口或客服指定方式提交核验。"}}]}]}</script>
 </head>
 <body>
   <header class="site-header">
@@ -824,8 +860,8 @@
       <a class="brand" href="#top" aria-label="返回首页顶部">
         <span class="brand-mark">AI</span>
         <span>
-          <span class="brand-title">GPT充值</span>
-          <span class="brand-subtitle">AI会员自助充值服务</span>
+          <span class="brand-title">AI会员充值</span>
+          <span class="brand-subtitle">多品类AI充值服务</span>
         </span>
       </a>
       <nav class="nav-links" aria-label="主导航">
