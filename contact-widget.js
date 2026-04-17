@@ -43,4 +43,46 @@
       status.textContent = "复制失败，请手动复制";
     });
   });
+
+  var header = document.querySelector(".site-header");
+  var mobileQuery = window.matchMedia("(max-width: 920px)");
+  var lastScrollY = window.scrollY;
+  var ticking = false;
+
+  function updateHeaderOnScroll() {
+    if (!header || !mobileQuery.matches) {
+      if (header) header.classList.remove("site-header--hidden");
+      lastScrollY = window.scrollY;
+      ticking = false;
+      return;
+    }
+
+    var currentScrollY = window.scrollY;
+    var delta = currentScrollY - lastScrollY;
+
+    if (currentScrollY <= 24) {
+      header.classList.remove("site-header--hidden");
+    } else if (delta > 8) {
+      header.classList.add("site-header--hidden");
+    } else if (delta < -8) {
+      header.classList.remove("site-header--hidden");
+    }
+
+    lastScrollY = currentScrollY;
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", function () {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateHeaderOnScroll);
+  }, { passive: true });
+
+  if (mobileQuery.addEventListener) {
+    mobileQuery.addEventListener("change", updateHeaderOnScroll);
+  } else if (mobileQuery.addListener) {
+    mobileQuery.addListener(updateHeaderOnScroll);
+  }
+
+  updateHeaderOnScroll();
 })();
