@@ -46,25 +46,30 @@
 
   var header = document.querySelector(".site-header");
   var mobileQuery = window.matchMedia("(max-width: 920px)");
-  var lastScrollY = window.scrollY;
+  var lastScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
   var ticking = false;
+
+  function getScrollY() {
+    var scrollingElement = document.scrollingElement || document.documentElement;
+    return window.pageYOffset || scrollingElement.scrollTop || 0;
+  }
 
   function updateHeaderOnScroll() {
     if (!header || !mobileQuery.matches) {
       if (header) header.classList.remove("site-header--hidden");
-      lastScrollY = window.scrollY;
+      lastScrollY = getScrollY();
       ticking = false;
       return;
     }
 
-    var currentScrollY = window.scrollY;
+    var currentScrollY = getScrollY();
     var delta = currentScrollY - lastScrollY;
 
-    if (currentScrollY <= 24) {
+    if (currentScrollY <= 12) {
       header.classList.remove("site-header--hidden");
-    } else if (delta > 8) {
+    } else if (delta > 4) {
       header.classList.add("site-header--hidden");
-    } else if (delta < -8) {
+    } else if (delta < -4) {
       header.classList.remove("site-header--hidden");
     }
 

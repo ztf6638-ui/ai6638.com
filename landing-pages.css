@@ -696,12 +696,19 @@ details p { margin-top: 10px; }
 
 @media (max-width: 920px) {
   .site-header {
-    position: sticky;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     transform: translateY(0);
     transition: transform 0.22s ease, box-shadow 0.22s ease;
     will-change: transform;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
   }
-  .site-header--hidden { transform: translateY(-100%); }
+  .site-header--hidden {
+    pointer-events: none;
+    transform: translateY(-110%);
+  }
   .nav {
     align-items: flex-start;
     flex-direction: column;
@@ -738,6 +745,10 @@ details p { margin-top: 10px; }
     background: rgba(255, 255, 255, 0.72);
     font-size: 13px;
     white-space: nowrap;
+  }
+  .hero,
+  .article {
+    padding-top: 120px;
   }
   .hero,
   .grid-3,

@@ -755,14 +755,19 @@
 
     @media (max-width: 920px) {
       .site-header {
-        position: sticky;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
         transform: translateY(0);
         transition: transform 0.22s ease, box-shadow 0.22s ease;
         will-change: transform;
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
       }
 
       .site-header--hidden {
-        transform: translateY(-100%);
+        pointer-events: none;
+        transform: translateY(-110%);
       }
 
       .nav {
@@ -813,6 +818,10 @@
         font-size: 13px;
       }
 
+      .hero {
+        padding-top: 134px;
+      }
+
       .hero,
       .trust-grid,
       .testimonial-grid {
@@ -851,7 +860,7 @@
       }
 
       .hero {
-        padding-top: 48px;
+        padding-top: 120px;
       }
 
       h1 {
