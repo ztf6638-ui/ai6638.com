@@ -1,414 +1,61 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="scroll-smooth">
+<html lang="zh-CN">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPT Plus使用指南 - AI会员充值服务</title>
-    <meta name="description" content="ChatGPT Plus完整使用指南，帮助您充分发挥Plus会员的全部功能">
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link href="./index_files/css2.css" rel="stylesheet">
-    <script src="./index_files/saved_resource.js"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        ::-webkit-scrollbar { width: 0px; background: transparent; }
-        .gradient-bg { background: linear-gradient(135deg, #14B8A6 0%, #6366F1 100%); }
-        .fade-in { animation: fadeInUp 0.8s ease-out forwards; }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .hamburger {
-            width: 24px;
-            height: 18px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        
-        .hamburger span {
-            display: block;
-            height: 3px;
-            width: 100%;
-            background: linear-gradient(135deg, #14B8A6 0%, #6366F1 100%);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-        
-        .hamburger.active span:nth-child(1) {
-            transform: translateY(7.5px) rotate(45deg);
-        }
-        
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .hamburger.active span:nth-child(3) {
-            transform: translateY(-7.5px) rotate(-45deg);
-        }
-        
-        .nav-item {
-            transform: translateX(0);
-            transition: all 0.2s ease;
-        }
-        
-        .nav-item:hover {
-            transform: translateX(5px);
-        }
-        
-        .guide-section {
-            scroll-margin-top: 100px;
-        }
-        
-        /* 菜单按钮脉冲效果 */
-        @keyframes pulse-slow {
-            0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
-            }
-            50% {
-                transform: scale(1.05);
-                box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
-            }
-        }
-        .animate-pulse-slow {
-            animation: pulse-slow 2s ease-in-out infinite;
-        }
-    </style>
-    
-    <!-- 百度统计代码 -->
-    <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?f24ab90c10aeed6e8da3e2eec71285e4";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 会员充值教程 | ChatGPT Claude Gemini Grok 开通指南</title>
+  <meta name="description" content="AI 会员充值教程总览，整理 ChatGPT Plus、Claude Pro、Gemini、Grok 的国内充值与开通步骤。">
+  <link rel="canonical" href="https://aicz.shop/guide.html">
+  <meta property="og:title" content="AI 会员充值教程">
+  <meta property="og:description" content="ChatGPT、Claude、Gemini、Grok 充值教程入口。">
+  <meta property="og:image" content="https://aicz.shop/images/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://aicz.shop/images/og-cover.jpg">
+  <link rel="stylesheet" href="landing-pages.css">
 </head>
-<body class="font-sans bg-gray-50 text-gray-900">
-    
-    <!-- 菜单按钮 - 更明显的设计 -->
-    <button id="menuButton" class="fixed top-6 left-6 z-50 flex items-center gap-2 px-4 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-slow">
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <span class="text-sm hidden sm:inline">菜单</span>
-    </button>
-
-    <!-- 侧边栏导航 -->
-    <div id="sidebar" class="fixed inset-y-0 left-0 w-72 bg-white shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out z-40">
-        <div class="flex flex-col h-full">
-            <div class="p-6 border-b border-gray-200">
-                <h2 class="text-2xl font-bold text-gray-900">AI充值服务</h2>
-                <p class="text-sm text-gray-500 mt-1">导航菜单</p>
-            </div>
-            
-            <nav class="flex-1 overflow-y-auto p-4">
-                <a href="index.html" class="nav-item flex items-center px-4 py-3 mb-2 text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 rounded-lg transition-all duration-200 group">
-                    <span class="text-xl mr-3">🏠</span>
-                    <span class="font-medium group-hover:text-indigo-600">主页</span>
-                </a>
-                <a href="blog.html" class="nav-item flex items-center px-4 py-3 mb-2 text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 rounded-lg transition-all duration-200 group">
-                    <span class="text-xl mr-3">📚</span>
-                    <span class="font-medium group-hover:text-indigo-600">博客</span>
-                </a>
-                <a href="faq.html" class="nav-item flex items-center px-4 py-3 mb-2 text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 rounded-lg transition-all duration-200 group">
-                    <span class="text-xl mr-3">❓</span>
-                    <span class="font-medium group-hover:text-indigo-600">常见问题</span>
-                </a>
-                <a href="guide.html" class="nav-item flex items-center px-4 py-3 mb-2 text-gray-700 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg transition-all duration-200 group">
-                    <span class="text-xl mr-3">📖</span>
-                    <span class="font-medium text-indigo-600">ChatGPT Plus使用指南</span>
-                </a>
-                <a href="comparison.html" class="nav-item flex items-center px-4 py-3 mb-2 text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 rounded-lg transition-all duration-200 group">
-                    <span class="text-xl mr-3">🆚</span>
-                    <span class="font-medium group-hover:text-indigo-600">Plus与Pro对比分析</span>
-                </a>
-            </nav>
-            
-            <div class="p-4 border-t border-gray-200">
-                <div class="text-center text-sm text-gray-500">
-                    <p>客服微信：aicz6638</p>
-                </div>
-            </div>
-        </div>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><span class="brand-mark">AI</span><span><span class="brand-title">GPT充值</span><span class="brand-subtitle">AI会员自助充值服务</span></span></a>
+      <nav class="nav-links">
+        <a href="chatgpt-plus-recharge.html">ChatGPT 充值</a>
+        <a href="claude-pro-recharge.html">Claude 充值</a>
+        <a href="gemini-recharge.html">Gemini 充值</a>
+        <a href="grok-recharge.html">Grok 充值</a>
+        <a class="active" href="guide.html">升级教程</a>
+        <a href="faq.html">常见问题</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- 遮罩层 -->
-    <div id="overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-30 opacity-0 pointer-events-none transition-opacity duration-300"></div>
-    
-    <!-- 页面头部 -->
-    <section class="gradient-bg py-20 px-4 relative overflow-hidden">
-        <div class="absolute inset-0 bg-black/10"></div>
-        <div class="container mx-auto text-center relative z-10 opacity-0 fade-in" id="header" style="opacity: 1;">
-            <h1 class="text-5xl font-bold text-white mb-4">📖 ChatGPT Plus使用指南</h1>
-            <p class="text-xl text-white/90">解锁ChatGPT Plus的全部潜力</p>
-        </div>
+  <main>
+    <section class="wrap hero">
+      <div>
+        <span class="eyebrow">教程中心</span>
+        <h1>AI 会员充值教程总览</h1>
+        <p class="lead">把“怎么充值、怎么开通、失败怎么办”集中到教程中心，再分别导向 ChatGPT、Claude、Gemini、Grok 的单产品教程页。</p>
+      </div>
+      <aside class="product-card">
+        <span class="tag">SEO 结构</span>
+        <h2>教程页负责承接问题型流量</h2>
+        <ul class="check-list">
+          <li>产品页承接“充值/购买/开通”成交词</li>
+          <li>教程页承接“怎么充值/步骤/失败处理”问题词</li>
+          <li>FAQ 页承接购买前疑虑</li>
+        </ul>
+      </aside>
     </section>
 
-    <!-- 文章内容 -->
-    <article class="py-16 px-4">
-        <div class="container mx-auto max-w-4xl">
-            
-            <!-- 简介 -->
-            <div class="bg-white rounded-2xl shadow-lg p-8 mb-8 opacity-0 fade-in" style="opacity: 1;">
-                <div class="prose max-w-none">
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        ChatGPT Plus 是 OpenAI 推出的高级订阅服务，为用户提供更快的响应速度、优先访问新功能以及在高峰时段的稳定访问。本指南将帮助您充分利用 Plus 会员的所有功能。
-                    </p>
-                </div>
-            </div>
-
-            <!-- 主要功能 -->
-            <div class="guide-section bg-white rounded-2xl shadow-lg p-8 mb-8 opacity-0 fade-in" style="opacity: 1; animation-delay: 0.1s;" id="features">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
-                    <span class="text-4xl mr-3">✨</span>
-                    ChatGPT Plus 主要功能
-                </h2>
-                
-                <div class="space-y-6">
-                    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border-l-4 border-blue-500">
-                        <h3 class="text-xl font-bold text-blue-900 mb-3">🚀 优先访问和更快响应</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            即使在高峰时段也能获得快速、稳定的访问。Plus 用户享有专用服务器资源，确保您的工作流程不被打断。响应速度通常比免费用户快 2-3 倍。
-                        </p>
-                    </div>
-
-                    <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-6 border-l-4 border-green-500">
-                        <h3 class="text-xl font-bold text-green-900 mb-3">🧠 GPT-5.2 模型访问</h3>
-                        <p class="text-gray-700 leading-relaxed mb-3">
-                            获得最先进的 GPT-5.2 模型访问权限，包括：
-                        </p>
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-start">
-                                <span class="text-green-600 mr-2">•</span>
-                                <span><strong>GPT-5.2</strong> - 更强的推理能力和创造力</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-green-600 mr-2">•</span>
-                                <span><strong>GPT-5.2 Turbo</strong> - 更快速度和更长上下文</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-green-600 mr-2">•</span>
-                                <span><strong>GPT-5.2</strong> - 多模态理解，支持图片和文本</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border-l-4 border-purple-500">
-                        <h3 class="text-xl font-bold text-purple-900 mb-3">🎨 DALL·E 3 图像生成</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            直接在 ChatGPT 中使用 DALL·E 3 创建高质量图像。只需描述您想要的图片，AI 就能为您生成专业级的视觉内容，无需切换到其他工具。
-                        </p>
-                    </div>
-
-                    <div class="bg-gradient-to-r from-orange-50 to-red-50 rounded-xl p-6 border-l-4 border-orange-500">
-                        <h3 class="text-xl font-bold text-orange-900 mb-3">📊 高级数据分析</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            上传和分析数据文件（CSV、Excel等），让 ChatGPT 帮您进行数据清理、可视化和深度分析。支持代码解释器功能，可以运行 Python 代码并生成图表。
-                        </p>
-                    </div>
-
-                    <div class="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-xl p-6 border-l-4 border-yellow-500">
-                        <h3 class="text-xl font-bold text-yellow-900 mb-3">🌐 网页浏览功能</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            ChatGPT 可以访问互联网获取最新信息，查找实时数据、新闻和研究资料，不再受限于训练数据的截止日期。
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 使用技巧 -->
-            <div class="guide-section bg-white rounded-2xl shadow-lg p-8 mb-8 opacity-0 fade-in" style="opacity: 1; animation-delay: 0.2s;" id="tips">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
-                    <span class="text-4xl mr-3">💡</span>
-                    使用技巧和最佳实践
-                </h2>
-                
-                <div class="space-y-6">
-                    <div class="bg-blue-50 rounded-xl p-6">
-                        <h3 class="text-xl font-bold text-blue-900 mb-3">1. 选择合适的模型</h3>
-                        <p class="text-gray-700 leading-relaxed mb-2">
-                            根据任务复杂度选择模型：
-                        </p>
-                        <ul class="space-y-1 text-gray-700 ml-4">
-                            <li>• <strong>简单查询</strong>：使用 GPT-3.5 更快速</li>
-                            <li>• <strong>复杂推理</strong>：使用 GPT-5.2 获得更好结果</li>
-                            <li>• <strong>图片处理</strong>：使用 GPT-5.2 多模态能力</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-green-50 rounded-xl p-6">
-                        <h3 class="text-xl font-bold text-green-900 mb-3">2. 优化提示词</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            清晰、具体的提示能获得更好的结果。提供背景信息、指定输出格式、设定角色扮演，都能显著提升回答质量。
-                        </p>
-                    </div>
-
-                    <div class="bg-purple-50 rounded-xl p-6">
-                        <h3 class="text-xl font-bold text-purple-900 mb-3">3. 使用自定义指令</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            在设置中配置自定义指令，让 ChatGPT 记住您的偏好和使用习惯，无需每次都重复说明。
-                        </p>
-                    </div>
-
-                    <div class="bg-orange-50 rounded-xl p-6">
-                        <h3 class="text-xl font-bold text-orange-900 mb-3">4. 利用插件和工具</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            Plus 用户可以访问各种插件，扩展 ChatGPT 的功能。从旅行规划到代码执行，插件能大大增强您的工作效率。
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 使用场景 -->
-            <div class="guide-section bg-white rounded-2xl shadow-lg p-8 mb-8 opacity-0 fade-in" style="opacity: 1; animation-delay: 0.3s;" id="scenarios">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
-                    <span class="text-4xl mr-3">🎯</span>
-                    实用场景示例
-                </h2>
-                
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-gradient-to-br from-blue-100 to-blue-50 rounded-xl p-6">
-                        <div class="text-3xl mb-3">✍️</div>
-                        <h3 class="text-lg font-bold text-blue-900 mb-2">内容创作</h3>
-                        <p class="text-gray-700 text-sm">撰写文章、博客、营销文案、社交媒体内容</p>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-green-100 to-green-50 rounded-xl p-6">
-                        <div class="text-3xl mb-3">💻</div>
-                        <h3 class="text-lg font-bold text-green-900 mb-2">编程助手</h3>
-                        <p class="text-gray-700 text-sm">代码生成、调试、代码审查、学习新语言</p>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-purple-100 to-purple-50 rounded-xl p-6">
-                        <div class="text-3xl mb-3">📚</div>
-                        <h3 class="text-lg font-bold text-purple-900 mb-2">学习辅导</h3>
-                        <p class="text-gray-700 text-sm">解答问题、制作学习计划、总结知识点</p>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl p-6">
-                        <div class="text-3xl mb-3">📊</div>
-                        <h3 class="text-lg font-bold text-orange-900 mb-2">数据分析</h3>
-                        <p class="text-gray-700 text-sm">处理数据、生成图表、商业分析报告</p>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-pink-100 to-pink-50 rounded-xl p-6">
-                        <div class="text-3xl mb-3">🎨</div>
-                        <h3 class="text-lg font-bold text-pink-900 mb-2">创意设计</h3>
-                        <p class="text-gray-700 text-sm">生成图片、设计方案、创意头脑风暴</p>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-teal-100 to-teal-50 rounded-xl p-6">
-                        <div class="text-3xl mb-3">🔍</div>
-                        <h3 class="text-lg font-bold text-teal-900 mb-2">研究助手</h3>
-                        <p class="text-gray-700 text-sm">文献综述、信息整理、研究方法建议</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 注意事项 -->
-            <div class="guide-section bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl shadow-lg p-8 mb-8 opacity-0 fade-in border-2 border-red-200" style="opacity: 1; animation-delay: 0.4s;">
-                <h2 class="text-2xl font-bold text-red-900 mb-4 flex items-center">
-                    <span class="text-3xl mr-3">⚠️</span>
-                    使用注意事项
-                </h2>
-                <ul class="space-y-3 text-gray-700">
-                    <li class="flex items-start">
-                        <span class="text-red-500 mr-2 mt-1">•</span>
-                        <span>验证重要信息：AI 生成的内容应当核实，特别是涉及专业领域的信息</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-500 mr-2 mt-1">•</span>
-                        <span>保护隐私：不要分享敏感个人信息或机密商业数据</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-500 mr-2 mt-1">•</span>
-                        <span>合理使用：遵守使用政策，不要用于违法或不道德的目的</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-red-500 mr-2 mt-1">•</span>
-                        <span>理解限制：AI 不是万能的，某些任务仍需要人类专业判断</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- 充值服务推广 -->
-            <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl shadow-2xl p-8 text-center">
-                <h2 class="text-3xl font-bold text-white mb-4">准备好体验 ChatGPT Plus 了吗？</h2>
-                <p class="text-white/90 mb-6 text-lg">我们提供安全、快速的充值服务</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="index.html" class="inline-block px-8 py-4 bg-white text-indigo-600 font-bold rounded-xl hover:shadow-xl transition-all duration-300">
-                        立即充值
-                    </a>
-                    <a href="faq.html" class="inline-block px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-xl hover:bg-white hover:text-indigo-600 transition-all duration-300">
-                        查看常见问题
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </article>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 px-4">
-        <div class="container mx-auto text-center">
-            <h3 class="text-2xl font-bold mb-4">AI会员充值服务</h3>
-            <p class="text-gray-400 mb-6">ChatGPT · Claude · Gemini · Grok 安全快速代充</p>
-            <div class="border-t border-gray-800 pt-6">
-                <p class="text-gray-500 text-sm">
-                    © 2024 AI会员充值服务. 本站仅提供技术服务，与 OpenAI/Anthropic/Google/xAI 无关联关系。
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // 侧边栏功能
-        const menuButton = document.getElementById('menuButton');
-        const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('overlay');
-        const hamburger = menuButton.querySelector('.hamburger');
-        
-        function toggleSidebar() {
-            sidebar.classList.toggle('-translate-x-full');
-            overlay.classList.toggle('opacity-0');
-            overlay.classList.toggle('pointer-events-none');
-            hamburger.classList.toggle('active');
-            
-            if (!sidebar.classList.contains('-translate-x-full')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
-        }
-        
-        menuButton.addEventListener('click', toggleSidebar);
-        overlay.addEventListener('click', toggleSidebar);
-        
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && !sidebar.classList.contains('-translate-x-full')) {
-                toggleSidebar();
-            }
-        });
-    </script>
-
+    <section class="wrap section">
+      <div class="section-head"><h2>选择你要看的教程</h2><p>每个教程页都和对应产品页互相链接，形成完整的落地页组合。</p></div>
+      <div class="grid-2">
+        <a class="panel" href="chatgpt-plus-recharge-guide.html"><h3>ChatGPT Plus 充值教程</h3><p>适合想开通 GPT Plus 的用户，包含购买、兑换和生效确认。已接入公众号图文教程。</p></a>
+        <a class="panel" href="claude-pro-recharge-guide.html"><h3>Claude Pro 充值教程</h3><p>适合 Claude 写作、代码和长文档用户，说明开通前准备与异常处理。已接入公众号图文教程。</p></a>
+        <a class="panel" href="gemini-recharge-guide.html"><h3>Gemini 充值教程</h3><p>适合 Google Gemini 用户，说明账号准备、购买和权益确认。</p></a>
+        <a class="panel" href="grok-recharge-guide.html"><h3>Grok 充值教程</h3><p>适合 Grok / SuperGrok 用户，说明购买、开通和售后核验流程。已接入公众号图文教程。</p></a>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap footer">本站为 AI 会员充值服务说明页。</footer>
 </body>
 </html>
-

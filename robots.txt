@@ -1,4 +1,4 @@
-# robots.txt for gptchongzhi.net
+# robots.txt for aicz.shop
 # 网站搜索引擎爬虫规则
 
 # 允许所有搜索引擎抓取
@@ -39,8 +39,8 @@ User-agent: YisouSpider
 Allow: /
 
 # 网站地图位置
-Sitemap: https://gptchongzhi.net/sitemap.xml
+Sitemap: https://aicz.shop/sitemap.xml
 
 # 站点主页
-Host: gptchongzhi.net
+Host: aicz.shop
 
