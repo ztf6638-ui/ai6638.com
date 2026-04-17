@@ -58,10 +58,16 @@
     </section>
   </main>
   <aside class="floating-contact" aria-label="客服联系方式">
-    <div class="floating-contact__title">需要帮助？</div>
-    <div class="floating-contact__item"><span>微信</span><strong>aicz6638</strong></div>
-    <div class="floating-contact__item"><span>QQ</span><strong>1175116341</strong></div>
-    <div class="floating-contact__hint">下单前后都可咨询</div>
+    <input class="floating-contact__toggle" type="checkbox" id="floating-contact-toggle">
+    <label class="floating-contact__button" for="floating-contact-toggle" aria-label="打开或收起客服联系方式">
+      <span class="floating-contact__bubble">微</span>
+    </label>
+    <div class="floating-contact__panel">
+      <div class="floating-contact__title">联系客服 <label class="floating-contact__close" for="floating-contact-toggle">收起</label></div>
+      <div class="floating-contact__item"><span>微信</span><strong>aicz6638</strong></div>
+      <div class="floating-contact__item"><span>QQ</span><strong>1175116341</strong></div>
+      <div class="floating-contact__hint">下单前后都可咨询</div>
+    </div>
   </aside>
   <footer class="wrap footer">
     <nav class="footer-links" aria-label="底部导航">

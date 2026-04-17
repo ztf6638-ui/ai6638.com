@@ -479,20 +479,94 @@ details p { margin-top: 10px; }
   right: 22px;
   bottom: 22px;
   z-index: 40;
-  width: 218px;
+}
+
+.floating-contact__toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.floating-contact__button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  box-shadow: 0 18px 38px rgba(22, 163, 74, 0.32);
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.floating-contact__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 46px rgba(22, 163, 74, 0.38);
+}
+
+.floating-contact__button::after {
+  content: "";
+  position: absolute;
+  right: 9px;
+  bottom: 5px;
+  width: 17px;
+  height: 17px;
+  border-radius: 3px 999px 999px 999px;
+  background: #16a34a;
+  transform: rotate(18deg);
+}
+
+.floating-contact__bubble {
+  position: relative;
+  z-index: 1;
+  font-size: 25px;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.floating-contact__panel {
+  position: absolute;
+  right: 0;
+  bottom: 78px;
+  width: 238px;
   padding: 16px;
   border: 1px solid rgba(99, 102, 241, 0.16);
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
   backdrop-filter: blur(16px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px) scale(0.96);
+  transform-origin: right bottom;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.floating-contact__toggle:checked ~ .floating-contact__panel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
 }
 
 .floating-contact__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 10px;
   color: var(--ink);
   font-size: 15px;
   font-weight: 950;
+}
+
+.floating-contact__close {
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 900;
 }
 
 .floating-contact__item {
@@ -547,21 +621,16 @@ details p { margin-top: 10px; }
   .floating-contact {
     right: 12px;
     bottom: 12px;
-    width: calc(100% - 24px);
-    max-width: 360px;
-    padding: 12px;
   }
 
-  .floating-contact__title,
-  .floating-contact__hint { display: none; }
-
-  .floating-contact__item {
-    display: inline-flex;
-    width: calc(50% - 5px);
+  .floating-contact__button {
+    width: 58px;
+    height: 58px;
   }
 
-  .floating-contact__item + .floating-contact__item {
-    margin-top: 0;
-    margin-left: 6px;
+  .floating-contact__panel {
+    right: 0;
+    bottom: 70px;
+    width: min(300px, calc(100vw - 24px));
   }
 }
