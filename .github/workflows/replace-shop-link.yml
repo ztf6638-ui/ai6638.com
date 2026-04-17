@@ -1,0 +1,44 @@
+name: Replace shop purchase link
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/replace-shop-link.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  replace:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Replace shop link
+        run: |
+          set -euo pipefail
+          old='https://fe.dtyuedan.cn/shop/L8V0BD2G'
+          new='https://fe.dtyuedan.cn/shop/37DNWTAT'
+          files=(
+            chatgpt-plus-recharge.html
+            claude-pro-recharge.html
+            gemini-recharge.html
+            grok-recharge.html
+            index.html
+          )
+          perl -0pi -e "s#\Q${old}\E#${new}#g" "${files[@]}"
+          rm -f .github/workflows/replace-shop-link.yml
+          git add "${files[@]}" .github/workflows/replace-shop-link.yml
+
+      - name: Commit replacement
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git diff --cached --quiet && echo 'No changes to commit' && exit 0
+          git commit -m 'Replace shop purchase link [skip ci]'
+          git push
