@@ -521,11 +521,18 @@ details p { margin-top: 10px; }
 }
 
 .floating-contact__bubble {
+  display: grid;
+  place-items: center;
   position: relative;
   z-index: 1;
-  font-size: 25px;
-  font-weight: 950;
-  line-height: 1;
+  width: 36px;
+  height: 30px;
+}
+
+.floating-contact__bubble svg {
+  display: block;
+  width: 36px;
+  height: 30px;
 }
 
 .floating-contact__panel {
@@ -574,23 +581,38 @@ details p { margin-top: 10px; }
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  width: 100%;
   padding: 9px 10px;
+  border: 0;
   border-radius: 14px;
   background: #f8fafc;
   color: #475569;
+  cursor: pointer;
+  font-family: inherit;
   font-size: 13px;
   font-weight: 850;
+  text-align: left;
 }
 
 .floating-contact__item + .floating-contact__item { margin-top: 8px; }
+
+.floating-contact__item:hover { background: #eef6ff; }
 
 .floating-contact__item strong {
   color: var(--indigo);
   font-size: 14px;
 }
 
+.floating-contact__copy-status {
+  margin-top: 8px;
+  min-height: 16px;
+  color: #16a34a;
+  font-size: 12px;
+  font-weight: 900;
+}
+
 .floating-contact__hint {
-  margin-top: 10px;
+  margin-top: 6px;
   color: #94a3b8;
   font-size: 12px;
   font-weight: 800;

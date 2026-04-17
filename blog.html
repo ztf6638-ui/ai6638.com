@@ -61,12 +61,18 @@
   <aside class="floating-contact" aria-label="客服联系方式">
     <input class="floating-contact__toggle" type="checkbox" id="floating-contact-toggle">
     <label class="floating-contact__button" for="floating-contact-toggle" aria-label="打开或收起客服联系方式">
-      <span class="floating-contact__bubble">微</span>
+      <span class="floating-contact__bubble">
+        <svg viewBox="0 0 64 52" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M25.5 6C12.5 6 2 14.6 2 25.1c0 5.9 3.4 11.2 8.7 14.7l-2 6.5 7.5-3.7c2.8 1 5.9 1.6 9.3 1.6 13 0 23.5-8.6 23.5-19.1S38.5 6 25.5 6Zm-8.2 16.2a3 3 0 1 1 0-6.1 3 3 0 0 1 0 6.1Zm16.3 0a3 3 0 1 1 0-6.1 3 3 0 0 1 0 6.1Z"/>
+          <path fill="currentColor" fill-opacity=".86" d="M41.7 19.3c10.9 0 19.7 7.2 19.7 16 0 4.9-2.7 9.3-7 12.3l1.6 5.4-6.2-3.1c-2.4.8-5 1.3-8 1.3-10.8 0-19.6-7.1-19.6-15.9s8.8-16 19.5-16Zm-6.7 13.5a2.5 2.5 0 1 0 0-5.1 2.5 2.5 0 0 0 0 5.1Zm13.6 0a2.5 2.5 0 1 0 0-5.1 2.5 2.5 0 0 0 0 5.1Z"/>
+        </svg>
+      </span>
     </label>
     <div class="floating-contact__panel">
       <div class="floating-contact__title">联系客服 <label class="floating-contact__close" for="floating-contact-toggle">收起</label></div>
-      <div class="floating-contact__item"><span>微信</span><strong>aicz6638</strong></div>
-      <div class="floating-contact__item"><span>QQ</span><strong>1175116341</strong></div>
+      <button type="button" class="floating-contact__item" data-copy="aicz6638" data-copy-label="微信"><span>微信</span><strong>aicz6638</strong></button>
+      <button type="button" class="floating-contact__item" data-copy="1175116341" data-copy-label="QQ"><span>QQ</span><strong>1175116341</strong></button>
+      <div class="floating-contact__copy-status" aria-live="polite"></div>
       <div class="floating-contact__hint">下单前后都可咨询</div>
     </div>
   </aside>
@@ -82,5 +88,6 @@
     </nav>
     <p>页面信息仅供购买前参考，具体商品、价格、库存和交付规则以购买入口展示为准。</p>
   </footer>
+  <script src="contact-widget.js" defer></script>
 </body>
 </html>
