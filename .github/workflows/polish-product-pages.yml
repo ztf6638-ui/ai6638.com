@@ -21,6 +21,7 @@ jobs:
 
       - name: Apply product page polish
         run: |
+          set -euo pipefail
           python3 <<'PY'
           from pathlib import Path
 
