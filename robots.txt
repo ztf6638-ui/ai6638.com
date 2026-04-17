@@ -1,4 +1,4 @@
-# robots.txt for aicz.shop
+# robots.txt for ai6638.com
 # 网站搜索引擎爬虫规则
 
 # 允许所有搜索引擎抓取
@@ -6,8 +6,6 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /private/
-Disallow: /*.js$
-Disallow: /*.css$
 
 # 百度爬虫 - 特别优化
 User-agent: Baiduspider
@@ -39,8 +37,8 @@ User-agent: YisouSpider
 Allow: /
 
 # 网站地图位置
-Sitemap: https://aicz.shop/sitemap.xml
+Sitemap: https://ai6638.com/sitemap.xml
 
 # 站点主页
-Host: aicz.shop
+Host: ai6638.com
 

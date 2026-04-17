@@ -28,7 +28,7 @@
 2. 注册百度账号（如已有百度账号可直接登录）
 3. 点击"管理" → "新增网站"
 4. 填写您的网站信息：
-   - 网站域名：`gptchongzhi.net`
+   - 网站域名：`ai6638.com`
    - 网站名称：`GPT Plus充值服务`
 5. 提交后获取统计代码（类似：`hm.js?xxxxxxxxxxxxxxxx`）
 6. 打开 `index.html` 文件，找到这段代码：
@@ -57,7 +57,7 @@
 1. **注册并验证网站**
    - 访问：https://ziyuan.baidu.com/
    - 点击"用户中心" → "站点管理" → "添加网站"
-   - 输入网站：`https://gptchongzhi.net`
+   - 输入网站：`https://ai6638.com`
    
 2. **验证网站所有权（三选一）**
    
@@ -77,14 +77,14 @@
 3. **提交sitemap**
    - 验证成功后，进入"数据引入" → "链接提交"
    - 选择"sitemap"
-   - 提交：`https://gptchongzhi.net/sitemap.xml`
+   - 提交：`https://ai6638.com/sitemap.xml`
 
 4. **主动推送链接（重要！）**
    - 进入"链接提交" → "主动推送"
    - 复制您的推送接口地址
    - 使用curl命令推送首页：
    ```bash
-   curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=https://gptchongzhi.net&token=您的token"
+   curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=https://ai6638.com&token=您的token"
    ```
    - 或者使用"手动提交"功能，直接输入网址
 
@@ -101,7 +101,7 @@
 1. **添加资源**
    - 访问：https://search.google.com/search-console
    - 点击"添加资源"
-   - 选择"网址前缀"，输入：`https://gptchongzhi.net`
+   - 选择"网址前缀"，输入：`https://ai6638.com`
 
 2. **验证网站所有权**
    - 推荐使用"HTML文件"方式
@@ -129,7 +129,7 @@
 3. 点击"添加站点"
 4. 如果您已经验证了Google Search Console，可以选择"从Google导入"
 5. 否则手动添加并验证
-6. 提交sitemap：`https://gptchongzhi.net/sitemap.xml`
+6. 提交sitemap：`https://ai6638.com/sitemap.xml`
 
 ---
 
@@ -176,14 +176,14 @@
 
 **百度提交示例：**
 ```bash
-curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=https://gptchongzhi.net&token=您的token"
+curl -H 'Content-Type:text/plain' --data-binary @urls.txt "http://data.zz.baidu.com/urls?site=https://ai6638.com&token=您的token"
 ```
 
 **创建urls.txt文件，包含要提交的URL：**
 ```
-https://gptchongzhi.net/
-https://gptchongzhi.net/#pricing
-https://gptchongzhi.net/#reviews
+https://ai6638.com/
+https://ai6638.com/#pricing
+https://ai6638.com/#reviews
 ```
 
 ---
@@ -219,8 +219,8 @@ https://gptchongzhi.net/#reviews
 
 #### 5.1 定期检查收录情况
 - 每周检查一次各搜索引擎收录情况
-- 百度：搜索 `site:gptchongzhi.net`
-- Google：搜索 `site:gptchongzhi.net`
+- 百度：搜索 `site:ai6638.com`
+- Google：搜索 `site:ai6638.com`
 
 #### 5.2 查看统计数据
 - 每天登录百度统计查看访问数据
@@ -316,7 +316,7 @@ https://gptchongzhi.net/#reviews
 
 ## 📝 域名配置
 
-**✅ 已完成：** 您的域名 `gptchongzhi.net` 已经在所有文件中配置完成！
+**✅ 已完成：** 您的域名 `ai6638.com` 已经在所有文件中配置完成！
 
 所有关键文件已更新：
 1. ✅ `index.html` - 结构化数据中的URL已更新
